@@ -13,3 +13,7 @@ def MaximumPairwiseProduct(vector):
             if aux > result:
                 result = aux
     return result
+
+def MaximumPairwiseProductfAST(vector):
+    vector.sort()
+    return vector[len(vector)-1] * vector[len(vector)-2]
