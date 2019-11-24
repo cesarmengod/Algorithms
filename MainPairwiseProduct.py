@@ -5,6 +5,8 @@ Created on Sun Nov 24 16:21:01 2019
 @author: armengod
 """
 
+import time
+
 def MaximumPairwiseProduct(vector):
     result = 0
     for i in range(len(vector)-1):
@@ -14,6 +16,17 @@ def MaximumPairwiseProduct(vector):
                 result = aux
     return result
 
-def MaximumPairwiseProductfAST(vector):
+def MaximumPairwiseProductFAST(vector):
     vector.sort()
     return vector[len(vector)-1] * vector[len(vector)-2]
+
+vector = [x for x in range(10000)]
+a = time.time()
+print(MaximumPairwiseProduct(vector))
+b = time.time()
+b-a
+
+a = time.time()
+print(MaximumPairwiseProductFAST(vector))
+b = time.time()
+b-a
